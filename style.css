@@ -18,7 +18,7 @@ body {
     background-color: azure;
     margin:auto;
     font-family: 'Helvetica';
-    max-width: 36em; 
+    max-width: 32em; 
     margin-top:2px; 
     margin-bottom:2px; 
 }
@@ -47,3 +47,9 @@ hr {
     border-bottom: none;
     color: black
   }
+
+@media only screen and (max-width:640px) {
+  .sqs-block-html {
+    margin: 10px;
+  }
+}
