@@ -19,8 +19,12 @@ body {
     margin:auto;
     font-family: 'Helvetica';
     max-width: 32em; 
-    margin-top:2px; 
-    margin-bottom:2px; 
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px
 }
 #title {
     margin-top: 1.5cm;
@@ -30,7 +34,7 @@ ul{
     font-size:85%;
     margin-top: 0.25cm;
     list-style: none;
-  }
+}
 
 a:link, a:visited {
     color: coral;
@@ -48,8 +52,3 @@ hr {
     color: black
   }
 
-@media only screen and (max-width:640px) {
-  .sqs-block-html {
-    margin: 10px;
-  }
-}
