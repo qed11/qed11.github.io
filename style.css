@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #002a68
 }
 #hnav {
-    background: #002a68;
+    background: lightskyblue;
 /*    background: #00204E; */
 /*     background: #A31F34;  */
         color:#FFFFFF;
@@ -11,9 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 10px;
 	margin:0px;
 	padding:0px;	
-    max-width: 48em;
-    align-self: center;	 
-      }
+  max-width: 48em;
+  align-self: center;	 
+  }
 body {
     background-color: azure;
     margin:auto;
@@ -27,7 +27,8 @@ body {
 }
 ul{
     font-size:85%;
-    margin-top: 0.25cm;
+    margin-top: 2px;
+    list-style: none;
   }
 
 a:link, a:visited {
