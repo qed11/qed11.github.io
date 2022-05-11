@@ -18,7 +18,7 @@ body {
     background-color: azure;
     margin:auto;
     font-family: 'Helvetica';
-    max-width: 32em; 
+    max-width: 36em; 
     margin-top: 2px;
     margin-bottom: 2px;
     padding-left: 20px;
@@ -26,7 +26,7 @@ body {
     padding-bottom: 10px;
 }
 #title {
-    margin-top: 1.5cm;
+    margin-top: 1cm;
 }
 
 ul{
