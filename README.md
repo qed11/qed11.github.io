@@ -1,2 +1,2 @@
 # qed11.github.io
-Personal Webpage
+This is the repository that hosts my personal website. I post some open-domain projects and some writeups occasionally.
