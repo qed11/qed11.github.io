@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day X</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<div id = "title">
+    <h2>
+        Day 18 - June 2, 2022
+    </h2>
+</div>
+<hr>
+<body>
+    The 1D linear FEM code has been updated with analytical solutions for the approximation functions
+    <ul>
+        <li>As noted from yesterday's log, the approximation function is piecewise continuous over the domain.
+            The FE approximation can then be used to construct analytical solutions around the whole domain, with defined derivatives as well.
+        </li>
+        <li>
+            Currently only linear basis functions are used, which means that it's an linear interpolation between each nodes.
+            But when it comes to quadratic basis functions, the spaces between each node is defined by a linear combination of the basis functions.
+        </li>
+    </ul>
+
+</body>
+<footer id="footer">
+    <hr>  
+    Copyright © 2022 QED
+    <br>
+    <a href = '../../index.html'>Home</a>
+</footer>
+</html>
