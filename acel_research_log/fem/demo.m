@@ -1,5 +1,5 @@
 mu = 0.01;
-[u, du] = FEM(mu, 50);
+[u, du] = FEM(50, mu);
 x = linspace(0, 1, size(u, 1))';
 figure
 scatter(x, u)

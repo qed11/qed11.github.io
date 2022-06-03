@@ -1,7 +1,0 @@
-err = zeros(25, 1);
-for i = 1:25
-    [uu, utrue] = my_fe(i, 0.001);
-    e = uu - utrue;
-    l2 = 
-end
-
