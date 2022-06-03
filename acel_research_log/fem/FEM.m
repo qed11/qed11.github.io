@@ -1,4 +1,4 @@
-function [u, du] = FEM(mu, n)
+function [u, du] = FEM(n, mu)
 % Compiling the coefficients of each node
     %This part is computing the coefficients of each node:
     h = 1/(n+1);
