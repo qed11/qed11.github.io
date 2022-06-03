@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 19</title>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<div id = "title">
+    <h2>
+        Day 19 - June 3, 2022
+    </h2>
+</div>
+<hr>
+<body>
+    Attended a mock lecture given by Dr. Philipp Seiler on <a href = "https://en.wikipedia.org/wiki/Signed_distance_function"> Signed Distance Function</a>.
+    A very cool idea about implicitly representing an enclosed object.
+    $\renewcommand\vec{\mathbf} $
+    <ul>
+        <li>When we have an enclosed domain $\Omega \in \mathbb{R}^n$, we can find a function \(f: \mathbb{R}^n \to \mathbb{R}\) such that 
+            $$ \begin{cases}
+            f(\vec{x}) < 0, \quad \vec{x} \in \Omega \\
+            f(\vec{x}) > 0, \quad \vec{x} \notin \Omega \\
+            f(\vec{x}) = 0, \quad \vec{x} \in \partial \Omega \\
+          \end{cases} $$
+        </li>
+        <li>This representation allows us to define faces with simple equations, which then allows us to construct complex shapes with basic arithmetics. 
+            Between two domains $\Omega_1 \: \text{and} \: \Omega_2$ with implicit function $\phi_1 \: \text{and} \: \phi_2$, we can have
+            
+            $$\text{Union:} \: \Omega_1 \cup \Omega_2 = \min{(\phi_1, \phi_2)}$$
+            $$\text{Intersection:} \: \Omega_1 \cap \Omega_2 = \max{(\phi_1, \phi_2)}$$
+            
+            
+        </li>
+
+        A signed distance function is a special type of such implicit functions, where it is defined as the shortest distance to the boundary of the shape. 
+        A negative values indicates that it is inside the shape, and a positive value is vice versa.
+    </ul> 
+
+</body>
+<footer id="footer">
+    <hr>  
+    Copyright © 2022 QED
+    <br>
+    <a href = '../../index.html'>Home</a>
+</footer>
+</html>
