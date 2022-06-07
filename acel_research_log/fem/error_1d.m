@@ -9,9 +9,11 @@ for i = 1:8
     dof(i) = 2^i;
     [u, du, fu, dfu] = FEM(2^i, mu);
     
+    ftrue = @(x) u_true(x, mu);
+    dftrue = @(x) du_true(x, mu);
     %Following done via Gauss Quadrature:
-    l2 = l2norm(fu, 0, 1, @u_true);
-    h1 = l2 + l2norm(dfu, 0, 1, @du_true);
+    l2 = l2norm(fu, 0, 1, ftrue);
+    h1 = l2 + l2norm(dfu, 0, 1, dftrue);
     
     err(i, 1) = sqrt(l2);
     err(i, 2) = sqrt(h1);
@@ -42,5 +44,9 @@ loglog(dof, err(:, 2))
 loglog(dof, err_trapz(:, 1))
 loglog(dof, err_trapz(:, 2))
 hold off
-legend("L2, Gauss", "H1, Gauss", "L2, Trap", "H1, Trap")
+legend("L2, Gauss", "H1, Gauss", "L2, Trap", "H1, Trap", "Location","best")
+xlabel("Degrees of Freedom", "Interpreter", "latex")
+ylabel("Error", "Interpreter", "latex")
+title("Error \(H^1\) and \(L^2\) norms", "Interpreter","latex")
+saveas(gcf, "error_linear.pdf")
 end

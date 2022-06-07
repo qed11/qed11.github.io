@@ -8,13 +8,13 @@ function q = l2norm(f, a, b, ftrue)
 %}
     if ~exist('ftrue','var')
      % third parameter does not exist, so default it to something
-        ftrue = @(x, mu) 0;
+        ftrue = @(x) 0;
     end
     n = size(f, 1) + 1;
     x = linspace(a, b, n)';
     q = 0;
     for i = 1:n-1
-        func = @(x) (f{i}(x) - ftrue(x, 0.01))^2;
+        func = @(x) (f{i}(x) - ftrue(x))^2;
         q = q + composite_gauss2(func, x(i), x(i+1), 10);
     end
 
