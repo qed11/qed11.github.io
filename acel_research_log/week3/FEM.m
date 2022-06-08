@@ -1,6 +1,4 @@
 function u = FEM(mu, n)
-%FEM Summary of this function goes here
-%   Detailed explanation goes here
     h = 1/(n+1);
     e = ones(n,1);
     A1 = mu/h * spdiags([-e 2*e -e],-1:1,n,n);
