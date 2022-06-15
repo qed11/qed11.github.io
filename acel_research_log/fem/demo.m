@@ -7,5 +7,6 @@ hold on
 plot(x, u_true(x, mu))
 hold off
 
+figure
 dutrue = du_true(x, mu);
 plot(du)
