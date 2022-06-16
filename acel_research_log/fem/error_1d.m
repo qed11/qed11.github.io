@@ -47,6 +47,6 @@ hold off
 legend("L2, Gauss", "H1, Gauss", "L2, Trap", "H1, Trap", "Location","best")
 xlabel("Degrees of Freedom", "Interpreter", "latex")
 ylabel("Error", "Interpreter", "latex")
-title("Error \(H^1\) and \(L^2\) norms", "Interpreter","latex")
+title("Error \(H^1\) and \(L^2\) norms using linear basis functions.", "Interpreter","latex")
 saveas(gcf, "error_linear.pdf")
 end
