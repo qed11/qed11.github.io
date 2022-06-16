@@ -1,0 +1,17 @@
+mu_true = 1e-4 + (1e-1 - 1e-4)*rand;
+ftrue = @(x) 1 - u_true(x, mu_true);
+starget = composite_gauss2(ftrue, 0 , 1 , 10);
+err_min = 1;
+mu_test = 0;
+
+for mu = linspace(1e-4, 1e-1, 100)
+    [~, fu, ~] = fem_p2(25, mu);
+    s = s_composite(fu, 0, 1);
+    err = (starget - s)^2
+    if s < err_min
+        s_min = s;
+        mu_test = mu;
+    end
+end
+
+disp([mu_true, mu_test])
