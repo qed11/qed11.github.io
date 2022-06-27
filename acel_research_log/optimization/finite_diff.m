@@ -5,5 +5,5 @@ function dJ = finite_diff(strue, mu, dmu)
     [~, fu, ~] = fem_p2(10, mu + dmu);
     s2 = s_composite(fu, 0, 1);
     J2 = (strue - s2)^2;
-    dJ = (J2 - J1) / 2*dmu;
+    dJ = (J2 - J1) / (2*dmu);
 end

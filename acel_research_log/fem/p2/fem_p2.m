@@ -11,10 +11,9 @@ function [u, fu, fdu] = fem_p2(n, mu)
 
     Bin2 = (14 + 2*mod(1:n, 2))';
     outer = mod(2:n+1, 2)';
-    A2 = mu/(3*h)* spdiags([outer -8*e, Bin2, -8*e outer], -2:2, n, n);
+    A2 = 1/(3*h)* spdiags([outer -8*e, Bin2, -8*e outer], -2:2, n, n);
 
-    A = A1 + A2;
-
+    A = A1 + mu * A2;
     
     L = h/3*(1 + mod(1:n, 2))';
     u = A\L;

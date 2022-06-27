@@ -1,13 +1,11 @@
-function g = gmat(n, mu)
+function g = gmat(n)
 
 setup;
 
-u = fem_p2(n, mu);
-
-x = linspace(0, 1, size(u, 1))';
+x = linspace(0, 1, 2*n + 3)';
 
 ww = zeros(3 * (n + 1), 1);
-phi = zeros(3 * (n + 1), size(u, 1));
+phi = zeros(3 * (n + 1), 2 * n + 3);
 
 for i = 1:n+1
     [w, philoc] = wqJ2(x(i), x(i+2));
@@ -15,9 +13,6 @@ for i = 1:n+1
     phi(3*i - 2:3*i, 2*i-1:2*i+1) = philoc;
 end
 
+phi = phi(:, 2:end-1);
+
 g = ww' * phi;
-
-ftrue = @(x) u_true(x, mu);
-
-disp(ww' * phi * u)
-disp(composite_gauss2(ftrue, 0, 1, 10))
