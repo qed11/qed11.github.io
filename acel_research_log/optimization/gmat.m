@@ -1,4 +1,4 @@
-function g = gmat(n)
+function [ww, phi] = gmat(n)
 
 setup;
 
@@ -15,4 +15,3 @@ end
 
 phi = phi(:, 2:end-1);
 
-g = ww' * phi;
