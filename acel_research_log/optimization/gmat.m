@@ -1,7 +1,5 @@
 function [ww, phi] = gmat(n)
 
-setup;
-
 x = linspace(0, 1, 2*n + 3)';
 
 ww = zeros(3 * (n + 1), 1);

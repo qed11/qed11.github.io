@@ -30,5 +30,7 @@ function [u, fu, fdu] = fem_p2(n, mu)
     end
     fu = fu';
     fdu = fdu';
+
+    u = u(2:end - 1);
 end
 
