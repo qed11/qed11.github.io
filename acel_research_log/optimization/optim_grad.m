@@ -10,8 +10,8 @@ n = 9;
 options = optimoptions(@fminunc,'Algorithm', 'trust-region', ...
                     'SpecifyObjectiveGradient',true, 'OptimalityTolerance',1e-8, 'StepTolerance', 1e-8);
 
-mu = 1;
-while mu < 1e-4 || mu > 0.1
+mu0 = 1;
+while mu0 < 1e-4 || mu0 > 0.1
     mu0 = 1e-4 + (1e-1 - 1e-4)*rand;
     tic
     [mu, flag, exflg] = fminunc(@des_out, mu0, options);
