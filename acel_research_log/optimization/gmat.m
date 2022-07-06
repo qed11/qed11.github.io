@@ -1,5 +1,9 @@
 function [ww, phi] = gmat(n)
 
+% compute weights and 
+% values of basis functions evaluated at quadrature points
+% 3 point Gauss Quadrature
+
 x = linspace(0, 1, 2*n + 3)';
 
 ww = zeros(3 * (n + 1), 1);
@@ -11,5 +15,6 @@ for i = 1:n+1
     phi(3*i - 2:3*i, 2*i-1:2*i+1) = philoc;
 end
 
+%this doesn't matter because the nodal value of node 0 and node n + 1 are all 0
 phi = phi(:, 2:end-1);
 
