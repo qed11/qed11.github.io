@@ -1,6 +1,7 @@
-addpath ../fem
-addpath ../fem/p2
-addpath ../../../femmat/
+clear path
+addpath ../fem/
+addpath ../../../femmat
+addpath ../fem/p2/
 
 
 

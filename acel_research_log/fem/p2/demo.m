@@ -5,7 +5,7 @@ n = 10;
 mu = 0.01;
 addpath('../');
 [u, fu, ~] = fem_p2(n, mu);
-plot(linspace(0, 1, size(u,1)), u)
+plot(linspace(0, 1, size(u,1) ), u)
 uu = [0];
 xx = linspace(0, 1, 2*n + 3);
 
