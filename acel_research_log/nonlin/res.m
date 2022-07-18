@@ -9,8 +9,8 @@ function [r, J] = res(n, mu, u)
     L = lmat(n);
     
     % computation of the residual -- derivation on onenote
-    r = mu * A2 * u + ((phi * u).^3 .* phi)' * w - L;
-    %r = mu * A2 * u;% + phi' * ((phi * u).^3 .* w) - L;
+    %r = mu * A2 * u + ((phi * u).^3 .* phi)' * w - L;
+    r = mu * A2 * u + phi' * ((phi * u).^3 .* w) - L;
     
     % helper function that creates a matrix that is convenient for
     % integration
