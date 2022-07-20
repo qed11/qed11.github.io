@@ -37,7 +37,6 @@ fprintf("mu = %.7f, true mu = %.7f\n", mu, mu_true)
 function [J, dJ] = des_out(mu)
     global n tol strue g
     u = fem_nonlin(n, mu, tol);
-
     J = (strue - 1 + g*u)^2;
     dJ = Jmu(strue, n, mu);
 end

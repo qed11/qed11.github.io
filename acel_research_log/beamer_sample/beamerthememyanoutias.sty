@@ -1,0 +1,153 @@
+\usetheme{CambridgeUS}
+%\usetheme{default}
+%\setbeamersize{text margin left=0.03\paperwidth, text margin right=0.03\paperwidth}
+
+\setbeamertemplate{headline}{} % no head line
+\setbeamertemplate{footline}{\hfill \begin{scriptsize}\raisebox{0.4em}{\textcolor{black}{\insertframenumber}} \hspace{0.1em} \end{scriptsize}} % just slide number in foot line
+\setbeamertemplate{blocks}[rounded][shadow=false] % rounded blocks
+\setbeamertemplate{navigation symbols}{} % no navigate symbols
+
+
+\setbeamercovered{transparent=40}
+
+\setbeamerfont{frametitle}{size=\large}
+
+\setbeamercolor{frametitle}{fg=white,bg=uoftlightblue}
+%\setbeamercolor{math text}{fg=mathbrown}
+\setbeamercolor{math text}{fg=black}
+\setbeamercolor{enumerate item}{fg=uoftlightblue}
+\setbeamercolor{itemize item}{fg=uoftlightblue}
+
+\g@addto@macro\normalsize{%
+  \setlength\abovedisplayskip{8pt}
+  \setlength\belowdisplayskip{8pt}
+  \setlength\abovedisplayshortskip{8pt}
+  \setlength\belowdisplayshortskip{8pt}
+}
+
+% define title block environment
+\newenvironment<>{titleblock}[1]{%
+  \begin{actionenv}#2%
+      \def\insertblocktitle{#1}%
+      \par%
+      \mode<presentation>{%
+      %  \setbeamercolor{block title}{fg=white,bg=orange!20!black}
+       \setbeamercolor{block body}{fg=white,bg=uoftlightblue}
+      % \setbeamercolor{itemize item}{fg=orange!20!black}
+      % \setbeamertemplate{itemize item}[triangle]
+     }%
+      \usebeamertemplate{block begin}}
+                 {\par\usebeamertemplate{block end}\end{actionenv}}
+
+
+% introduce transition slides
+\AtBeginSection[] {
+  \setbeamertemplate{footline}{}
+
+   \begin{frame}
+
+       \begin{titleblock}{}
+         \begin{center}
+           \raisebox{0.25em}{ }
+         {\large\insertsection}
+         \raisebox{-0.25em}{ }
+         \end{center}
+       \end{titleblock}
+     
+     \vspace{1em}
+     
+     \tableofcontents[currentsection,
+     sectionstyle=hide/hide,
+     subsectionstyle=shaded/shaded/hide,
+     subsubsectionstyle=hide/hide/hide]
+
+   \addtocounter{framenumber}{-1} 
+
+   \end{frame}
+
+   \setbeamertemplate{footline}{\hfill \begin{scriptsize}\raisebox{0.4em}{\textcolor{black}{\insertframenumber}} \hspace{0.1em} \end{scriptsize}}
+}
+
+\AtBeginSubsection[] {
+  \setbeamertemplate{footline}{}
+
+   \begin{frame}
+     
+       \begin{titleblock}{}
+         \begin{center}
+     \raisebox{0.25em}{ }
+         {\large\insertsection}
+         \raisebox{-0.25em}{ }
+         \end{center}
+       \end{titleblock}
+     
+     \vspace{1em}
+     
+     \tableofcontents[
+     currentsubsection,
+     sectionstyle=hide/hide,
+     subsectionstyle=show/shaded/hide,
+     subsubsectionstyle=shaded/shaded/hide
+     ]
+
+     \addtocounter{framenumber}{-1} 
+
+   \end{frame}
+
+
+
+   \setbeamertemplate{footline}{\hfill \begin{scriptsize}\raisebox{0.4em}{\textcolor{black}{\insertframenumber}} \hspace{0.1em} \end{scriptsize}}
+}
+
+\AtBeginSubsubsection[] {
+  \setbeamertemplate{footline}{}
+
+   \begin{frame}
+     
+       \begin{titleblock}{}
+         \begin{center}
+     \raisebox{0.25em}{ }
+         {\large\insertsection}
+         \raisebox{-0.25em}{ }
+         \end{center}
+       \end{titleblock}
+     
+     \vspace{1em}
+
+     \tableofcontents[
+     currentsubsection,
+     sectionstyle=hide/hide,
+     subsectionstyle=show/shaded/hide,
+     subsubsectionstyle=show/shaded/hide
+     ]
+
+   \addtocounter{framenumber}{-1} 
+
+   \end{frame}
+
+   \setbeamertemplate{footline}{\hfill \begin{scriptsize}\raisebox{0.4em}{\textcolor{black}{\insertframenumber}} \hspace{0.1em} \end{scriptsize}}
+}
+
+% define colors
+\definecolor{lightgrey}{rgb}{0.75, 0.75, 0.75}
+\definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
+\definecolor{darkslateblue}{RGB}{0,51,102}
+\definecolor{darkgreen}{RGB}{0,87,48}
+\definecolor{greentwo}{RGB}{53,129,0}
+\definecolor{uoftlightblue}{RGB}{0,53,129}
+%\definecolor{uoftlightblue}{RGB}{0,63,155}
+\definecolor{uoftblue}{RGB}{6,41,88}
+\definecolor{uoftred}{RGB}{187,19,62}
+\definecolor{mitred}{RGB}{163,31,52}
+%\definecolor{mathbrown}{RGB}{163,92,6}
+\definecolor{mathbrown}{RGB}{130,77,0}
+
+% define standard color emphasis commands
+\newcommand{\cola}[1]{{\color{cadmiumred}{#1}}}
+\newcommand{\colb}[1]{{\color{blue}{#1}}}
+\newcommand{\colc}[1]{{\color{greentwo}{#1}}}
+\newcommand{\cold}[1]{{\color{uoftlightblue}{#1}}}
+\newcommand{\colk}[1]{{\color{black}{#1}}}
+\newcommand{\colw}[1]{{\color{white}{#1}}}
+\newcommand{\coltm}[1]{{\color{white}{#1}}} % title math color
+
