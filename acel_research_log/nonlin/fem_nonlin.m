@@ -8,7 +8,7 @@ function u = fem_nonlin(n, mu, tol)
         [r, J] = res(n, mu, u);
         du = J\(-r);
         u = u + du;
-        fprintf('%d %.8e\n', iter, norm(r));
+        %fprintf('%d %.8e\n', iter, norm(r));
         if norm(r) < tol
             break
         end
