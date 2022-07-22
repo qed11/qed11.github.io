@@ -1,5 +1,4 @@
 clear;
-setup;
 
 % compute true s value
 mu_true = 1e-4 + (1e-1 - 1e-4)*rand;
@@ -9,12 +8,13 @@ global n starget
 starget = composite_gauss2(ftrue, 0 , 1 , 10);
 
 %set n value for dof
-n = 9;
+n = 50;
 
 % use gradient
 options = optimoptions(@fminunc,'Algorithm', 'trust-region', ...
                     'SpecifyObjectiveGradient',true, ...
-                    'OptimalityTolerance',1e-16, 'StepTolerance', 1e-16);
+                   'Display','iter', ...
+                   'OptimalityTolerance',1e-8, 'StepTolerance', 1e-8);
 
 %optimization
 mu = 1;

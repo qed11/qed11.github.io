@@ -1,5 +1,4 @@
-function dJ = Jmu(starget, n, mu)
-    u = fem_nonlin(n, mu, 1e-8); 
+function dJ = Jmu(starget, n, mu, u)
     
     [~, dRu] = res(n, mu, u);
 

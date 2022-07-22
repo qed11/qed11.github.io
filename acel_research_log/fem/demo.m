@@ -6,6 +6,7 @@ x = linspace(0, 1, size(u, 1))';
 figure
 scatter(x, u)
 hold on
+x = linspace(0, 1, 40);
 plot(x, u_true(x, mu))
 hold off
 xlabel('\(x\)', 'Interpreter','latex')

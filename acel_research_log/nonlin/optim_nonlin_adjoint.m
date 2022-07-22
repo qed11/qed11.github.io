@@ -1,6 +1,6 @@
 clear;
 global n tol
-n = 9;
+n = 50;
 tol = 1e-7;
 
 % compute target s value
@@ -16,8 +16,10 @@ global strue
 strue = 1 - g * u_true;
 
 
-options = optimoptions(@fminunc,'Algorithm', 'trust-region', ...
-                    'SpecifyObjectiveGradient',true, 'OptimalityTolerance',1e-8, 'StepTolerance', 1e-8);
+options = optimoptions(@fminunc, 'Algorithm','trust-region',...
+                    'SpecifyObjectiveGradient',true, ...
+                   'Display','iter', ...
+                   'FunctionTolerance',1e-16);
 
 % optimization code
 mu = 1;
@@ -30,7 +32,7 @@ toc
 
 % observation: takes significantly longer than linear problem because
 % Newton's iterative method.
-fprintf("mu = %.7f, true mu = %.7f\n", mu, mu_true)
+fprintf("mu = %.8f, true mu = %.8f\n", mu, mu_true)
 
 % definition of function that returns both J and dJ/dmu at given mu value.
 % this uses adjoint optimization
@@ -38,5 +40,5 @@ function [J, dJ] = des_out(mu)
     global n tol strue g
     u = fem_nonlin(n, mu, tol);
     J = (strue - 1 + g*u)^2;
-    dJ = Jmu(strue, n, mu);
+    dJ = Jmu(strue, n, mu, u);
 end
