@@ -1,5 +1,4 @@
 clear;
-setup;
 
 % compute true s value
 mu_true = 1e-4 + (1e-1 - 1e-4)*rand;
