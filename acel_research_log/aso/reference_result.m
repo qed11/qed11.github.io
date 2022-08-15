@@ -4,16 +4,10 @@ figure
 set(gca,'xscale','log', 'yscale', 'log')
 hold on
 for i = 3:12
-    T = readtable(strcat('ref/',files(i).name))
+    T = readtable(strcat('ref/',files(i).name));
     loglog(T{:, 1}, T{:, 4})
     
 end
-hold off
-figure
-loglog(T{:, 1}, T{:, 4})
-figure
-
-plot(T{:, 1}, T{:, 4})
 hold off
  
 
