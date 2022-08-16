@@ -9,5 +9,11 @@ for i = 3:12
     
 end
 hold off
+xlabel("Degrees of Freedom")
+ylabel("Error")
+title("Error Estimation in Reference Solution")
+legend(files(3:12).name, "Interpreter","none", "location", "best")
+
+saveas(gcf, "ref/reference_result.png")
  
 
