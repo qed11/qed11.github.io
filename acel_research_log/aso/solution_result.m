@@ -1,12 +1,11 @@
-topLevelFolder = strcat(pwd, '/soln');
+topLevelFolder = strcat(pwd, '/soln/all');
 files = dir(topLevelFolder);
 figure
 set(gca, 'yscale', 'log')
-xlim([0,15])
-ylim([1e-6 1e-1])
+xlim([0, 20])
 hold on
 for i = 3:11
-    T = readtable(strcat('soln/',files(i).name));
+    T = readtable(strcat('soln/all/',files(i).name));
     semilogy(T{:, 1}, abs(T{:, 3}))
 end
 legend(files(3:11).name, "Interpreter","none")
@@ -20,9 +19,8 @@ saveas(gcf, "soln/solution_result.pdf")
 hold off
 
 figure
-
 for i = 3:11
-    T = readtable(strcat('soln/',files(i).name));
+    T = readtable(strcat('soln/all/',files(i).name));
     semilogy(T{:, 1}, abs(T{:, 5}))
     hold on
 end
