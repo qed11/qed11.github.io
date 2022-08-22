@@ -1,0 +1,13 @@
+# Investigation:
+
+ * compute a reference solution with parameters given by professor Yano
+ * use the same mesh for the reference solution and optimization 
+ 	* Scale the mesh by a factor of 4
+ 	* Max iteration: 8
+ * use different mesh for reference solution and optimization
+ 	* no adaptation iterations
+ 	* start with a coarser mesh
+ 		*issue: cannot make the mesh scale lower than 1.0
+ 	* start with a finer mesh
+ 	
+

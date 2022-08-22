@@ -1,3 +1,0 @@
-/scratch/m/myano/qed/aps_cases/naca_euler_optim/build_mpi/CMakeFiles/rebuild_cache.dir
-/scratch/m/myano/qed/aps_cases/naca_euler_optim/build_mpi/CMakeFiles/edit_cache.dir
-/scratch/m/myano/qed/aps_cases/naca_euler_optim/build_mpi/CMakeFiles/naca_euler_optim.dir

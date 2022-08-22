@@ -1,6 +1,0 @@
-# Log Aug - 09 - 2022	
-* investigate influence of initial mesh refinement 
-	* a fine reference mesh vs no adaptation
-		- high error
-	* a fine reference mesh vs coarse start but 5 iterations
-	* a fine reference mesh vs a fine start but no iterations
