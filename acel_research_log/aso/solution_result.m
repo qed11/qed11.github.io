@@ -1,14 +1,15 @@
-topLevelFolder = 'result_round_2/soln/';
+topLevelFolder = 'result_order_1/soln/';
 files = dir(topLevelFolder);
 figure
+ender = 6;
 set(gca, 'yscale', 'log')
 xlim([0, 20])
 hold on
-for i = 3:9
+for i = 3:ender
     T = readtable(strcat(topLevelFolder,'/',files(i).name));
-    semilogy(T{:, 1}, abs(T{:, 3}))
+    semilogy(T{:, 1}, T{:, 3})
 end
-legend(files(3:9).name, "Interpreter","none")
+legend(files(3:ender).name, "Interpreter","none")
 
 xlabel("Number of Iterations")
 ylabel("Error")
@@ -19,13 +20,13 @@ saveas(gcf, "solution_result.pdf")
 hold off
 
 figure
-for i = 3:9
+for i = 3:ender
     T = readtable(strcat(topLevelFolder,files(i).name));
-    semilogy(T{:, 1}, abs(T{:, 5}))
+    semilogy(T{:, 1}, T{:, 5})
     hold on
 end
 xlim([0, 20])
-legend(files(3:9).name, "Interpreter","none", "Location","best")
+legend(files(3:ender).name, "Interpreter","none", "Location","best")
 
 xlabel("Number of Iterations")
 ylabel("KKT Value")
