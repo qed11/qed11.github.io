@@ -1,0 +1,35 @@
+
+scontrol show jobid 8058591
+JobId=8058591 JobName=debugjob-2-qed
+   UserId=qed(3121029) GroupId=myano(6007398) MCS_label=N/A
+   Priority=12165136 Nice=0 Account=ctb-myano QOS=normal
+   JobState=TIMEOUT Reason=TimeLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=0:0
+   RunTime=00:45:10 TimeLimit=00:45:00 TimeMin=N/A
+   SubmitTime=2022-08-26T11:45:48 EligibleTime=2022-08-26T11:45:48
+   AccrueTime=2022-08-26T11:45:48
+   StartTime=2022-08-26T11:45:50 EndTime=2022-08-26T12:31:00 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-08-26T11:45:50 Scheduler=Main
+   Partition=debug AllocNode:Sid=nia-login03:156568
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia[0002-0003]
+   BatchHost=nia0002
+   NumNodes=2 NumCPUs=160 NumTasks=80 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=160,mem=350000M,node=2,billing=80
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/gpfs/fs0/scratch/m/myano/qed/aps_cases/naca_euler_optim/build
+   Comment=/opt/slurm/bin/salloc --time=0:45:0 --job-name=debugjob-2-qed --nodes=2 --ntasks=80 -p debug --exclusive 
+   Power=
+   
+
+sacct -j 8058591
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+8058591      debugjob-+  ctb-myano   00:45:10                        49:34.988 1-10:14:59      0:0 
+8058591.int+ interacti+  ctb-myano   00:46:09   2098200K   1341536K  00:03.428  13:36.810      0:9 
+8058591.ext+     extern  ctb-myano   00:45:10    142384K      1128K  00:00.001   00:00:00      0:0 
+8058591.0     pmi_proxy  ctb-myano   00:26:12  35991824K   4720080K  49:31.558 1-10:01:22      0:0 
