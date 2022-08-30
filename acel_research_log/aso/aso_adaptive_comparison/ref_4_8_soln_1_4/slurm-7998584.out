@@ -1,0 +1,39 @@
+
+scontrol show jobid 7998584
+JobId=7998584 JobName=debugjob-1-qed
+   UserId=qed(3121029) GroupId=myano(6007398) MCS_label=N/A
+   Priority=12305584 Nice=0 Account=ctb-myano QOS=normal
+   JobState=COMPLETING Reason=TimeLimit Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=0:0
+   RunTime=01:00:28 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2022-08-19T10:57:45 EligibleTime=2022-08-19T10:57:45
+   AccrueTime=Unknown
+   StartTime=2022-08-19T10:57:45 EndTime=2022-08-19T11:58:13 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2022-08-19T10:57:45 Scheduler=Main
+   Partition=debug AllocNode:Sid=nia-login02:129774
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nia0001
+   BatchHost=nia0001
+   NumNodes=1 NumCPUs=80 NumTasks=40 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=80,mem=175000M,node=1,billing=40
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=175000M MinTmpDiskNode=0
+   Features=[skylake|cascade] DelayBoot=00:00:00
+   OverSubscribe=NO Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/gpfs/fs0/scratch/m/myano/qed/aps_cases/naca_euler_optim/build
+   Comment=/opt/slurm/bin/salloc --time=1:0:0 --job-name=debugjob-1-qed --nodes=1 --ntasks=40 -p debug --exclusive 
+   Power=
+   
+
+sacct -j 7998584
+JobID           JobName    Account    Elapsed  MaxVMSize     MaxRSS  SystemCPU    UserCPU ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- ---------- ---------- -------- 
+7998584      debugjob-+  ctb-myano   01:00:28                        34:02.340 1-04:56:39      0:0 
+7998584.int+ interacti+  ctb-myano   01:01:28   1501076K    574020K  00:12.052  00:32.039      0:9 
+7998584.ext+     extern  ctb-myano   01:00:28    142384K       944K   00:00:00  00:00.001      0:0 
+7998584.0     pmi_proxy  ctb-myano   00:08:12  42214872K  10802412K  06:08.570   05:19:46      0:0 
+7998584.1     pmi_proxy  ctb-myano   00:10:00  42210948K  10903484K  07:43.183   06:31:00      0:0 
+7998584.2     pmi_proxy  ctb-myano   00:08:39  42214920K  10891016K  06:32.539   05:38:01      0:0 
+7998584.3     pmi_proxy  ctb-myano   00:09:13  42214796K  10885944K  06:56.806   05:57:08      0:0 
+7998584.4     pmi_proxy  ctb-myano   00:08:26  42215564K  10890268K  06:29.188   05:30:10      0:0 
