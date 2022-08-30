@@ -1,4 +1,4 @@
-topLevelFolder = 'result_order_1/soln/';
+topLevelFolder = 'result_uniform_mesh/soln/';
 files = dir(topLevelFolder);
 figure
 ender = 6;
@@ -15,10 +15,15 @@ xlabel("Number of Iterations")
 ylabel("Error")
 title("Errors Between Reference and Computed Solution")
 
+
+
+
+
+
 saveas(gcf, "solution_result.pdf")
 
 hold off
-
+%{
 figure
 for i = 3:ender
     T = readtable(strcat(topLevelFolder,files(i).name));
@@ -34,3 +39,4 @@ title("KKT Value Of the Solution")
 
 saveas(gcf, "KKT_result.pdf")
 
+%}
