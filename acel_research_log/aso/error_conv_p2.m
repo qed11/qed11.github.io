@@ -9,6 +9,7 @@ hold on
 loglog(dof, param)
 
 % =====================================================
+%{
 adapt_err = readtable("error_csv/errors_orig_1.csv");
 loglog(adapt_err{:, 1}, adapt_err{:, 2})
 loglog(adapt_err{:, 1}, adapt_err{:, 3})
@@ -16,19 +17,17 @@ loglog(adapt_err{:, 1}, adapt_err{:, 3})
 adapt_err = readtable("error_csv/errors.csv");
 loglog(adapt_err{:, 1}, adapt_err{:, 2})
 loglog(adapt_err{:, 1}, adapt_err{:, 3})
-
+%}
 %======================================================
 loglog(dof, sqrt(1./(100.*dof)),"-.")
 loglog(dof, 5./dof,"-.")
+loglog(dof, 0.5./dof.^(2/3), "-.")
 
-title("Error convergence rate on uniformly spaced mesh")
-xlabel("Degrees of Freedom")
-ylabel("Error")
+
+title("Error convergence rate on uniformly spaced mesh", "Interpreter","latex")
+xlabel("Degrees of Freedom, \(N\)", "Interpreter","latex")
+ylabel("Error", "Interpreter","latex")
 legend("Pressure Matching Error", "Parameter Error Norm", ...
-       "Pressure Matching Error with AMR, init mesh fineness 2", ...
-       "Parameter Error Norm with AMR, init mesh fineness 2", ...
-       "Pressure Matching Error with AMR, init mesh fineness 1", ...
-       "Parameter Error Norm with AMR, init mesh fineness 1", ...
-       "Square Root Convergence", "Linear Convergence", ...
-       "Location","best")
+       "\(N^{-1/2}\) Convergence", "\(N^{-1}\) Convergence", ...
+       "\(N^{-2/3}\) Convergence","Location","best", 'Interpreter', "latex")
 saveas(gcf, "result_uniform_mesh/error_conv_p2.pdf")
