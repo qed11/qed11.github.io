@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #002a68
 }
 #hnav {
-    background: lightskyblue;
+    background: rgb(255, 255, 255);
 /*    background: #00204E; */
 /*     background: #A31F34;  */
         color:#FFFFFF;
@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: center;	 
   }
 body {
-    background-color: azure;
+    background-color: rgb(241, 249, 249);
     margin:auto;
     font-family: 'Helvetica';
     max-width: 36em; 
